@@ -47,7 +47,8 @@ colnames(all_data) <- c("subject","activity", "activity_desc", featureMeanStd.na
 
 ##Calculate average value for all measurement group by activity and subject
 avg_all_data <- all_data %>%
-  group_by(activity,activity_desc, subject) %>%
+  select(-activity) %>%
+  group_by(activity_desc, subject) %>%
   summarise_each(funs(mean))
 
 ##Export to file
