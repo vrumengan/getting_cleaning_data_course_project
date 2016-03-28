@@ -3,9 +3,9 @@ This code book of result in tidy.csv.
 
 ##Identifiers
 
-subject - subject ID, a person.
-activity - activity ID
-activity_desc - description of the activity
+- subject - subject ID, a person.
+- activity - activity ID
+- activity_desc - description of the activity
 
 ##Measurements
 
