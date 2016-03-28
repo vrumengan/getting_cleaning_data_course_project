@@ -45,8 +45,10 @@ featureMeanStd.names <- gsub("std","Std",featureMeanStd.names)
 colnames(all_data) <- c("subject","activity", "activity_desc", featureMeanStd.names)
 
 
-##
+##Calculate average value for all measurement group by activity and subject
 avg_all_data <- all_data %>%
-  select(-activity) %>%
-  group_by(activity_desc, subject) %>%
+  group_by(activity,activity_desc, subject) %>%
   summarise_each(funs(mean))
+
+##Export to file
+write.table(avg_all_data, row.names = FALSE, file = "tidy.txt")
